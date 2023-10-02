@@ -4,9 +4,6 @@ import { Model } from "../../assets/Scene";
 import PlayButton from "../PlayButton/PlayButton"
 import "./HomePage.css";
 import { mediaConstants } from "../../config/mediaConstants";
-import {PlaneModel} from "../../assets/planeModel/PlaneModel"
-import { Html, useProgress } from '@react-three/drei'
-
 
 const HomePage = () => {
     const script = "Hello Everyone!! I am Saksham Bhugra\n Full Stack 3d Web developer"
@@ -63,7 +60,6 @@ const HomePage = () => {
       
         <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
         <Canvas id="canvas" camera={{ fov: 60, near: 0.1, far: 1000 }}>
-          <Suspense fallback={<Loader />}>
           <ambientLight intensity={0.7} />
           <spotLight
             position={[-10,2,10]}
@@ -83,7 +79,6 @@ const HomePage = () => {
             setTitle = {setTitle}
             setUrl = {setUrl}
           />
-          </Suspense>
         </Canvas>
       </div>
     </>
